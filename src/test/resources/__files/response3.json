@@ -1,0 +1,4 @@
+{
+  "response": "Hello {{parameters.key}}!",
+  "id": "{{randomValue type='UUID'}}"
+}

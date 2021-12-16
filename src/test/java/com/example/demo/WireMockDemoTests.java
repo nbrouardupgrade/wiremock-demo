@@ -1,6 +1,8 @@
 package com.example.demo;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.ok;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
@@ -28,14 +30,6 @@ class WireMockDemoTests {
         stubFor(get("/public/v1/users")
                 .willReturn(ok().withBodyFile("response2.json")));
         final var call = demoClient.hello();
-        assertThat(call).isNotBlank();
-    }
-
-    @Test
-    void test3() {
-        stubFor(get("/public/v1/users")
-                .willReturn(ok().withBodyFile("response2.json")));
-        final var call = demoClient.hello();
-        assertThat(call).isNotBlank();
+        assertThat(call).contains("Hello World!");
     }
 }
