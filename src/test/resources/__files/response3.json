@@ -1,4 +1,5 @@
 {
   "response": "Hello {{parameters.key}}!",
-  "id": "{{randomValue type='UUID'}}"
+  "id": "{{randomValue type='UUID'}}",
+  "date": "{{now offset='-2 days' format='yyyy-MM-dd'}}"
 }
