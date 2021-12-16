@@ -24,12 +24,4 @@ class WireMockDemoTests {
         final var call = demoClient.hello();
         assertThat(call).isEqualTo("body");
     }
-
-    @Test
-    void test2() {
-        stubFor(get("/public/v1/users")
-                .willReturn(ok().withBodyFile("response2.json")));
-        final var call = demoClient.hello();
-        assertThat(call).contains("Hello World!");
-    }
 }
