@@ -1,0 +1,4 @@
+demo.server:
+  scheme: http
+  host: localhost
+  port: 9999
