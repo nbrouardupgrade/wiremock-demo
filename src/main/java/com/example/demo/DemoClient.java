@@ -8,7 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class DemoClient {
+public class
+DemoClient {
     private final FeignDemoClient feignDemoClient;
     public String hello() {
         log.info("Calling GET /hello");

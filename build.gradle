@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.5.7'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id "io.freefair.lombok" version "6.3.0"
 	id 'java'
 	id 'idea'
 }
@@ -27,12 +28,18 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.0.5'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// For Junit 5
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.1'
 	testImplementation 'com.github.tomakehurst:wiremock-jre8:2.32.0'
+
+	// For Junit 4
+	testImplementation 'org.springframework.cloud:spring-cloud-contract-wiremock:3.0.5'
+	testImplementation ('org.junit.vintage:junit-vintage-engine:5.8.2') {
+		exclude group: 'org.hamcrest', module: 'hamcrest-core'
+	}
 }
 
 test {

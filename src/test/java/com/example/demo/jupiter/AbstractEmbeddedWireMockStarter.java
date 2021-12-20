@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.jupiter;
 
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
 
@@ -20,7 +20,7 @@ public abstract class AbstractEmbeddedWireMockStarter {
     @RegisterExtension
     static WireMockExtension wiremock = WireMockExtension.newInstance()
             .options(wireMockConfig()
-                    .port(9999)
+                    .port(9999) // TODO I don't know how to get the dynamic port and set the FeignClient with it
                     .extensions(new ResponseTemplateTransformer(true))
                     .usingFilesUnderClasspath("src/test/resources/wiremock/"))
             .build();
