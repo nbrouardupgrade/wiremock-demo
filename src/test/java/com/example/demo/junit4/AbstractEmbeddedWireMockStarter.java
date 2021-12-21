@@ -18,7 +18,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureWireMock(port = 0)
-@TestPropertySource(properties = "demo.server.port=${wiremock.server.port}")
+@TestPropertySource(properties = {
+        "demo.server.port=${wiremock.server.port}",
+        "spectrum.server.port=${wiremock.server.port}"})
 @Import(AbstractEmbeddedWireMockStarter.EmbeddedWiremockConfig.class)
 public abstract class AbstractEmbeddedWireMockStarter {
 

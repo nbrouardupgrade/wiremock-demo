@@ -2,3 +2,6 @@ demo.server:
   scheme: http
   host: localhost
   port: 9999
+spectrum.server:
+  host: localhost
+  port: 9999

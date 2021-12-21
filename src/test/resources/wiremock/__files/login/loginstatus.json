@@ -1,0 +1,22 @@
+{
+  "senderId": "Spectrum",
+  "creationTime": "{{parameters.creationTime}}",
+  "tenantId": "Not Provided",
+  "senderSubsystemId": "SPECTRUM_RETAIL",
+  "senderVersion": "6.4.4",
+  "receiverId": "",
+  "responseStatus": "RESPONSE_OK",
+  "additionalResponseMessageList": null,
+  "loginDTO": {
+    "id": 0,
+    "updateCount": 0,
+    "company": 0,
+    "opsArea": null,
+    "userName": null,
+    "password": null,
+    "spectrumToken": "108abcf85a648620295b2e7dcbd39f9a5afa2728919cb4ae06b226d7e69a3f6279efae67256bf8da346e8816bc0602d7a0144a3e45c55430a3e679c50cb018a2",
+    "timeToLive": 3600,
+    "tokenGeneratedDateTime": "{{now format='MM/dd/yyyy HH:mm:ss'}}"
+  },
+  "links": []
+}

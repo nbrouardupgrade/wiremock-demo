@@ -24,12 +24,21 @@ configurations {
 }
 
 repositories {
+	mavenLocal()
+	maven {
+		url "https://artifactory.build.upgrade.com/artifactory/libs-release"
+	}
 	mavenCentral()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.0.5'
+	implementation 'com.shawsystems:spectrum-client-dtos:6.4.4'
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas:2.6.1'
+	implementation 'org.springframework.hateoas:spring-hateoas:0.25.2.RELEASE'
+
+	runtimeOnly 'com.shawsystems:runtime-client:6.4.4'
 
 	// For Junit 5
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.1'
